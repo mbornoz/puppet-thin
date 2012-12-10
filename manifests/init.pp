@@ -24,7 +24,7 @@ class thin (
   # resource alias is only usable for require
   # realize Package[thin] doesn't work if thin
   # is an alias, see http://projects.puppetlabs.com/issues/4459
-  Package <| alias == 'thin' |>
+  Package <| alias == 'ruby-thin' |>
 
   file {[$config_dir, $log_dir]:
     ensure  => 'directory',
