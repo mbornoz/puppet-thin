@@ -4,7 +4,7 @@
 #
 # Parameters:
 # - The $chdir to go inside dir before starting
-# - The $user to run daemon as 
+# - The $user to run daemon as
 # - The $group to run daemon as
 # - The $rackup Rack config to load
 # - The $ensure specifies if thin::app is present or absent

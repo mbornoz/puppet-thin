@@ -8,8 +8,8 @@
 #   The type of packaging system.
 #
 # [*config_dir*]
-#   The config files directory  
-# 
+#   The config files directory
+#
 # [*log_dir*]
 #   The main log directory
 #

@@ -18,10 +18,10 @@ class thin (
   case $package_type {
     'gem'    : { include ruby::gem::thin }
     'package': { include ruby::package::thin }
-    default  : { fail "Unsupported package type $package_type" }
+    default  : { fail "Unsupported package type ${package_type}" }
   }
 
-  # resource alias is only usable for require 
+  # resource alias is only usable for require
   # realize Package[thin] doesn't work if thin
   # is an alias, see http://projects.puppetlabs.com/issues/4459
   Package <| alias == 'thin' |>
@@ -53,7 +53,7 @@ class thin (
     hasstatus  => $service_hasstatus,
     hasrestart => $service_hasrestart,
     pattern    => $service_pattern,
-    require    => [ 
+    require    => [
       File[$config_dir,$log_dir,$pid_dir],
       File["/etc/init.d/${service}"], Package['thin'],
     ],
