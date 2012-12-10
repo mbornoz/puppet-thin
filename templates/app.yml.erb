@@ -1,0 +1,10 @@
+# <%= @name %>.yml
+address: <%= @address %>
+port: <%= @port %> 
+chdir: <%= @chdir %>
+user: <%= @user %>
+group: <%= @group %>
+rackup: <%= @rackup %>
+log: <%= scope.lookupvar('thin::params::log_dir') %>/<%= @name %>.log
+pid: <%= scope.lookupvar('thin::params::pid_dir') %>/<%= @name %>.pid
+daemonize: <%= @daemonize %>
