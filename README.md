@@ -21,7 +21,7 @@ The definition thin::app offers an easy way to configure and start your Rails ap
       chdir   => '/opt/myapp',
       user    => 'myapp',
       group   => 'myapp',
-      rackup  => "/opt/myapp/config.ru",
+      rackup  => '/opt/myapp/config.ru',
       require => ...
     }
 
