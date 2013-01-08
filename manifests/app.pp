@@ -39,16 +39,14 @@ define thin::app (
   $daemonize  = true,
 ) {
 
-  include thin::params
-
-  file {"${thin::params::config_dir}/${name}.yml":
+  file {"${thin::config_dir}/${name}.yml":
     ensure  => $ensure,
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
     content => template('thin/app.yml.erb'),
-    notify  => Service[$thin::params::service],
-    require => File[$thin::params::config_dir],
+    notify  => Service[$thin::service],
+    require => File[$thin::config_dir],
   }
 
 }
