@@ -3,17 +3,17 @@
 # This class installs Thin
 #
 class thin (
-  $config_dir         = $thin::params::config_dir,
-  $log_dir            = $thin::params::log_dir,
-  $pid_dir            = $thin::params::pid_dir,
-  $package_type       = $thin::params::package_type,
-  $service            = $thin::params::service,
-  $service_ensure     = $thin::params::service_ensure,
-  $service_enable     = $thin::params::service_enable,
-  $service_hasstatus  = $thin::params::service_hasstatus,
-  $service_hasrestart = $thin::params::service_hasrestart,
-  $service_pattern    = $thin::params::service_pattern
-) inherits thin::params {
+  $config_dir         = '/etc/thin.d',
+  $log_dir            = '/var/log/thin',
+  $pid_dir            = '/var/run/thin',
+  $package_type       = 'package',
+  $service            = 'thin',
+  $service_ensure     = 'running',
+  $service_enable     = true,
+  $service_hasstatus  = false,
+  $service_hasrestart = true,
+  $service_pattern    = 'thin server'
+) {
 
   case $package_type {
     'gem'    : { include ruby::gem::thin }
